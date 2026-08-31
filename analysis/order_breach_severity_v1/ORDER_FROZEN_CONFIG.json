@@ -1,0 +1,220 @@
+{
+  "analysis_id": "order_breach_severity_v1",
+  "frozen_at_utc": "2026-08-23T05:53:31Z",
+  "scope": {
+    "final_order_breach_model_allowed": true,
+    "positive_breach_severity_model_allowed": true,
+    "profile_redesign_allowed": false,
+    "profile_reselection_allowed": false,
+    "business_policy_allowed": false,
+    "thesis_edit_allowed": false,
+    "results_registry_edit_allowed": false,
+    "git_commit_allowed": false
+  },
+  "data": {
+    "default_data_dir": "data/olist_data",
+    "canonical_assembler": "analysis/profile_pivot_phase2a/scripts/data_pipeline.py",
+    "canonical_assembler_sha256": "0c4cad3c99db268292253abd26e2070ccf2a286337bcfe9fb76fb3768c44ab8d",
+    "canonical_expected_orders": 96470,
+    "profile_daily_input": "analysis/dynamic_profile_profile_validation_v1/PROFILE_DAILY_SCORES.csv.gz",
+    "profile_daily_input_sha256": "ff3c3f19982714087b9309e03fb35d99bf9039a574b819afa2b6b544e330b56c",
+    "profile_parent_input": "analysis/dynamic_profile_profile_validation_v1/PROFILE_PARENT_STRUCTURE.csv",
+    "profile_parent_input_sha256": "da0ae9431165f8bc635f6805ef89d79ef8bf28802aed53c50020596415593aa4",
+    "profile_selection_freeze": "analysis/dynamic_profile_profile_validation_v1/PROFILE_SELECTION_FREEZE.json",
+    "profile_selection_freeze_sha256": "f2409082543bca174c13a2ba94481d2d03c7413021232678ff139438ece69742",
+    "profile_selected_candidates": "analysis/dynamic_profile_profile_validation_v1/PROFILE_SELECTED_CANDIDATES.csv",
+    "profile_selected_candidates_sha256": "b8a4cb4b71a09493c9db5fa8da5248078e2906ceb0c7faad46a6770433358659",
+    "confirmation_labels": "analysis/dynamic_profile_profile_validation_v1/working/CONFIRMATION_LABELS.csv",
+    "confirmation_labels_sha256": "1cdca2914de4a85edec10529ae6ff7c8c134d28b15091f861874095fa9207ee4",
+    "confirmation_month_input": "analysis/dynamic_profile_profile_validation_v1/working/CONFIRMATION_BY_MONTH_FOR_LABELS.csv",
+    "confirmation_month_input_sha256": "dbc29ad31b30ada32ec7be6d00698a1ac207c7d6930d4d2a75dbc8bcb518a103",
+    "hrd_daily_labels": "analysis/dynamic_profile_profile_validation_v1/working/HRD_DAILY_LABELS.csv",
+    "hrd_daily_labels_sha256": "9e63f45823998303a8bd47d0a1b238fb563fc455cad3e7bf65d5c100c6ed66d3",
+    "profile_snapshot_time": "purchase_calendar_date_midnight",
+    "profile_snapshot_rule": "snapshot_date_equals_normalized_order_purchase_date",
+    "profile_history_rule": "label_available_at_strictly_less_than_snapshot_midnight"
+  },
+  "population": {
+    "sample": "canonical_delivered_one_row_per_order",
+    "start_inclusive": "2017-04-01",
+    "end_inclusive": "2018-08-30",
+    "breach_target": "actual_delivery_calendar_date_gt_estimated_delivery_calendar_date",
+    "positive_lateness_days": "max(actual_delivery_calendar_date_minus_estimated_delivery_calendar_date,0)",
+    "severity_condition": "positive_lateness_days_gt_0",
+    "multi_seller_rule": "deterministic_modal_main_seller_then_lexical_tie_break",
+    "missing_profile_rule": "retain_order_and_use_frozen_global_parent_fallback_when_mapping_exists",
+    "missing_mapping_rule": "retain_order_with_global_parent_score_and_separate_missing_mapping_audit"
+  },
+  "periods": {
+    "development": {"start": "2017-04-01", "end_exclusive": "2018-01-01"},
+    "later_cohort": {"start": "2018-01-01", "end_exclusive": "2018-07-01", "monthly": true},
+    "terminal": {"start": "2018-07-01", "end_inclusive": "2018-08-30", "single_frozen_origin": "2018-07-01"},
+    "development_inner_folds": [
+      {"fold": 1, "train_start": "2017-04-01", "train_end_exclusive": "2017-07-01", "validation_start": "2017-07-01", "validation_end_exclusive": "2017-09-01"},
+      {"fold": 2, "train_start": "2017-04-01", "train_end_exclusive": "2017-09-01", "validation_start": "2017-09-01", "validation_end_exclusive": "2017-11-01"},
+      {"fold": 3, "train_start": "2017-04-01", "train_end_exclusive": "2017-11-01", "validation_start": "2017-11-01", "validation_end_exclusive": "2018-01-01"}
+    ],
+    "training_label_rule": "purchase_before_origin_and_actual_delivery_timestamp_strictly_before_origin",
+    "development_validation_label_rule": "purchase_in_validation_window_and_actual_delivery_timestamp_strictly_before_validation_window_end",
+    "evaluation_label_rule": "eventually_observed_canonical_outcome_in_purchase_cohort"
+  },
+  "profiles": {
+    "S1": {
+      "name": "seller_handling_level",
+      "candidate_id": "handling_level|seller_id|C|w90|l14|P1|parent=global|kappa=na|min_support=5",
+      "base_candidate_id": "handling_level|seller_id|C|w90|l14|P1|parent=global|kappa=na",
+      "profile_spec_id": "ps_18f6d18af885ac9c1930",
+      "entity": "seller_id", "scheme": "C", "window_days": 90, "lag_days": 14,
+      "estimator": "P1", "parent": "global", "kappa": null, "min_support": 5
+    },
+    "S2": {
+      "name": "seller_handling_tail",
+      "candidate_id": "handling_tail|seller_id|A|w90|l0|P1|parent=global|kappa=10|min_support=5",
+      "base_candidate_id": "handling_tail|seller_id|A|w90|l0|P1|parent=global|kappa=10",
+      "profile_spec_id": "ps_29c28f8f40eed03c1031",
+      "entity": "seller_id", "scheme": "A", "window_days": 90, "lag_days": 0,
+      "estimator": "P1", "parent": "global", "kappa": 10, "min_support": 5
+    },
+    "R1": {
+      "name": "route_transit_level",
+      "candidate_id": "transit_level|state_od|A|w90|l0|P0|parent=global|kappa=na|min_support=5",
+      "base_candidate_id": "transit_level|state_od|A|w90|l0|P0|parent=global|kappa=na",
+      "profile_spec_id": "ps_18f16966ac00ff520226",
+      "entity": "state_od", "scheme": "A", "window_days": 90, "lag_days": 0,
+      "estimator": "P0", "parent": "global", "kappa": null, "min_support": 5
+    },
+    "R2": {
+      "name": "route_transit_tail",
+      "candidate_id": "transit_tail|state_od|A|w90|l0|P1|parent=global|kappa=10|min_support=5",
+      "base_candidate_id": "transit_tail|state_od|A|w90|l0|P1|parent=global|kappa=10",
+      "profile_spec_id": "ps_9799491505b2347220fb",
+      "entity": "state_od", "scheme": "A", "window_days": 90, "lag_days": 0,
+      "estimator": "P1", "parent": "global", "kappa": 10, "min_support": 5
+    },
+    "M5_ENDPOINT": {
+      "name": "route_historical_final_breach",
+      "candidate_id": "final_breach|state_od|A|w90|l0|P1|parent=global|kappa=100|min_support=5",
+      "base_candidate_id": "final_breach|state_od|A|w90|l0|P1|parent=global|kappa=100",
+      "profile_spec_id": "ps_ef5d05dc7c0496cca415",
+      "entity": "state_od", "scheme": "A", "window_days": 90, "lag_days": 0,
+      "estimator": "P1", "parent": "global", "kappa": 100, "min_support": 5,
+      "representative_rule": "lowest_frozen_development_selection_rank_then_lexical_candidate_id",
+      "frozen_selection_rank": 1
+    },
+    "feature_payload": ["score", "log1p_support", "cold_start", "posterior_se", "freshness_days"],
+    "primary_level_feature_allowed": false,
+    "raw_and_eb_together_allowed": false
+  },
+  "current_order_features": {
+    "promise_numeric": ["promised_delivery_days"],
+    "context_numeric": [
+      "n_items", "n_unique_products", "n_unique_sellers", "multi_item", "multi_product", "multi_seller",
+      "total_price", "total_freight_value", "freight_to_price_ratio", "avg_product_weight_g",
+      "avg_product_volume_cm3", "max_product_dimension_cm", "category_diversity",
+      "customer_seller_same_state", "distance_km", "purchase_month_num", "purchase_weekday",
+      "purchase_hour", "is_weekend_purchase", "days_to_next_holiday", "days_since_previous_holiday",
+      "holiday_within_next_3d", "holiday_within_next_7d", "holiday_in_promise_window",
+      "num_holidays_in_promise_window", "num_weekend_days_in_promise_window",
+      "black_friday_period", "christmas_new_year_period", "carnival_period", "known_event_indicator"
+    ],
+    "context_categorical": ["customer_state", "main_seller_state", "main_product_category", "route_region", "distance_band"],
+    "event_interactions": ["S1_score_x_known_event", "R1_score_x_known_event"],
+    "known_event_indicator_definition": "max(holiday_within_next_7d,black_friday_period,christmas_new_year_period,carnival_period)",
+    "carnival_execution_status": "retained_as_audited_constant_zero_field_because_public_holiday_calendar_excluded_optional_carnival",
+    "forbidden": [
+      "order_id_as_predictor", "seller_id_as_predictor", "state_od_as_predictor", "payment_fields",
+      "order_approved_at", "order_delivered_carrier_date", "order_delivered_customer_date",
+      "handling_duration", "transit_duration", "promise_error_days", "review_fields",
+      "realised_daily_order_count", "realised_daily_gmv", "retrospective_hrd_label"
+    ]
+  },
+  "classification": {
+    "families": ["logistic_l2", "xgboost"],
+    "hyperparameter_selection_model": "M1",
+    "same_family_hyperparameters_across_ladder": true,
+    "logistic": {"C_grid": [0.01, 0.1, 1.0, 10.0], "penalty": "l2", "solver": "liblinear", "max_iter": 1000, "class_weight": null, "random_state": 20260823},
+    "xgboost": {
+      "objective": "binary:logistic", "eval_metric": "logloss", "tree_method": "hist",
+      "learning_rate_grid": [0.03, 0.05], "max_depth_grid": [3, 6], "min_child_weight_grid": [5, 20],
+      "subsample": 0.8, "colsample_bytree": 0.8, "reg_lambda": 1.0, "reg_alpha": 0.0,
+      "max_estimators": 800, "early_stopping_rounds": 50, "n_jobs": 4, "random_state": 20260823
+    },
+    "selection_metric": "mean_chronological_log_loss",
+    "selection_tie_break": ["mean_brier", "lower_complexity", "lexical_parameter_json"],
+    "model_ladder": ["M0", "M1", "M2", "M3", "M4", "M5", "M4E"],
+    "primary_models": ["M0", "M1", "M2", "M3", "M4"],
+    "secondary_models": ["M5", "M4E"]
+  },
+  "preprocessing": {
+    "numeric": "median_imputation_with_missing_indicators_then_standardisation_fit_on_training_only",
+    "categorical": "most_frequent_imputation_then_one_hot_min_frequency_20_handle_unknown_infrequent_if_exist_fit_on_training_only"
+  },
+  "calibration": {
+    "candidate_methods": ["none", "platt", "isotonic"],
+    "selection_source": "development_chronological_out_of_fold_predictions_only",
+    "selection_metric": "log_loss_then_brier_then_simplicity",
+    "method_order": ["none", "platt", "isotonic"],
+    "frozen_after_development": true,
+    "bins": 10,
+    "binning": "equal_frequency_deterministic_order_id_tie_break"
+  },
+  "severity": {
+    "condition": "positive_lateness_days_gt_0",
+    "quantiles": [0.5, 0.9],
+    "secondary_q95_allowed": false,
+    "families": ["linear_quantile", "xgboost_quantile"],
+    "linear_alpha_grid": [0.0001, 0.001, 0.01],
+    "linear_solver": "highs",
+    "xgboost_objective": "reg:quantileerror",
+    "xgboost_eval_metric": "quantile",
+    "xgboost_structure_source": "frozen_classification_xgboost_M1_development_choice",
+    "model_ladder": ["Q1", "Q2", "Q3", "Q4"],
+    "primary_reference": "unconditional_training_quantile",
+    "incremental_reference": "Q1",
+    "prediction_floor_days": 0.0
+  },
+  "ablations": {
+    "representations": ["score_only", "metadata_only", "full"],
+    "seller_score_subsets": ["handling_level_only", "handling_tail_only", "both_scores"],
+    "route_score_subsets": ["transit_level_only", "transit_tail_only", "both_scores"],
+    "hyperparameters": "reuse_corresponding_frozen_main_block_family_parameters"
+  },
+  "uncertainty": {
+    "paired_calendar_block_bootstrap_replicates": 500,
+    "block": "purchase_calendar_week",
+    "confidence": 0.95,
+    "seed": 20260823,
+    "iid_order_bootstrap_allowed": false
+  },
+  "interpretation_thresholds": {
+    "high_support_material_reversal_delta_log_loss": 0.0,
+    "high_support_material_reversal_delta_brier": 0.0,
+    "calibration_wace_worsening_tolerance": 0.005,
+    "calibration_absolute_slope_error_worsening_tolerance": 0.1,
+    "q90_absolute_coverage_error_worsening_tolerance": 0.02,
+    "score_contribution_rule": "score_only_median_delta_log_loss_below_zero_or_full_better_than_metadata_only_on_log_loss_with_no_brier_worsening"
+  },
+  "hrd": {
+    "source_definition": "both_top10",
+    "phase_column": "both_top10_phase",
+    "predictor_allowed": false,
+    "evaluation_only": true
+  },
+  "storage": {
+    "row_predictions_format": "parquet",
+    "parquet_engine": "pyarrow",
+    "parquet_compression": "zstd",
+    "parquet_index": false,
+    "classification_sort_keys": ["period", "cohort", "family", "model_id", "order_id"],
+    "severity_sort_keys": ["period", "cohort", "family", "model_id", "quantile", "order_id"]
+  },
+  "determinism": {
+    "seed": 20260823,
+    "fitted_model_hash": "sha256_of_pickle_protocol_5_fitted_dataclass_within_frozen_python_and_package_environment",
+    "float_format": "%.12g",
+    "date_format": "%Y-%m-%d",
+    "na_rep": "",
+    "gzip_mtime": 0,
+    "sort_kind": "mergesort"
+  }
+}

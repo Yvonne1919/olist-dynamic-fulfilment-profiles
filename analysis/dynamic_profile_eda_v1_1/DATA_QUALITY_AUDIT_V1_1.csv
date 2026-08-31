@@ -1,0 +1,41 @@
+scope,check,count,denominator,percentage,detail
+all_placed,duplicate_order_ids,0,99441,0.0,
+all_placed,multi_seller_orders,1278,99441,1.2851841795637615,
+all_placed,missing_entity_seller_id,775,99441,0.7793566034130791,
+all_placed,missing_entity_seller_x_customer_region,775,99441,0.7793566034130791,
+all_placed,missing_entity_seller_x_customer_state,775,99441,0.7793566034130791,
+all_placed,missing_entity_seller_x_state_od,775,99441,0.7793566034130791,
+all_placed,missing_entity_region_od,775,99441,0.7793566034130791,
+all_placed,missing_entity_state_od,775,99441,0.7793566034130791,
+all_placed,missing_entity_zip2_od,775,99441,0.7793566034130791,
+all_placed,missing_order_purchase_timestamp,0,99441,0.0,
+all_placed,missing_order_approved_at,160,99441,0.1608994278014099,
+all_placed,missing_order_delivered_carrier_date,1783,99441,1.7930229985619615,
+all_placed,missing_order_delivered_customer_date,2965,99441,2.981667521444877,
+all_placed,missing_order_estimated_delivery_date,0,99441,0.0,
+all_placed,negative_purchase_to_carrier,166,99441,0.16693315634396275,retained
+all_placed,negative_handling,1359,99441,1.366639514888225,retained; excluded only from nonnegative diagnostic
+all_placed,negative_transit,23,99441,0.02312929274645267,retained; excluded only from nonnegative diagnostic
+all_placed,unresolved_non_delivered,2963,99441,2.9796562785973593,never coded as non-breach or zero severity
+all_placed,delivered_status_missing_customer_delivery,8,99441,0.008044971390070495,
+all_placed,extreme_purchase_to_carrier_above_p999,98,99441,0.09855089952836356,raw p99.9=37.16131156250214; retained
+all_placed,extreme_handling_duration_above_p999,98,99441,0.09855089952836356,raw p99.9=36.22379031250013; retained
+all_placed,extreme_transit_duration_above_p999,97,99441,0.09754527810460474,raw p99.9=76.9641056250004; retained
+all_placed,extreme_promise_error_days_above_p999,95,99441,0.09553403525708712,raw p99.9=55.0; retained
+canonical_delivered,duplicate_order_ids,0,96470,0.0,
+canonical_delivered,multi_seller_orders,1275,96470,1.3216544003317094,
+canonical_delivered,missing_seller_id,0,96470,0.0,
+canonical_delivered,missing_route_state,0,96470,0.0,
+canonical_delivered,missing_distance,480,96470,0.49756400953664354,retained V1 canonical distance diagnostic
+canonical_delivered,negative_purchase_to_carrier,165,96470,0.17103762827822122,retained
+canonical_delivered,negative_handling,1350,96470,1.39939877682181,retained
+canonical_delivered,negative_transit,23,96470,0.0238416087902975,retained
+canonical_delivered,missing_order_purchase_timestamp,0,96470,0.0,
+canonical_delivered,missing_order_approved_at,14,96470,0.014512283611485436,
+canonical_delivered,missing_order_delivered_carrier_date,1,96470,0.001036591686534674,
+canonical_delivered,missing_order_delivered_customer_date,0,96470,0.0,
+canonical_delivered,missing_order_estimated_delivery_date,0,96470,0.0,
+canonical_delivered,extreme_purchase_to_carrier_above_p999,97,96470,0.10054939359386338,raw p99.9=36.82955541666736; retained
+canonical_delivered,extreme_post_approval_handling_above_p999,97,96470,0.10054939359386338,raw p99.9=35.76915111111478; retained
+canonical_delivered,extreme_transit_time_above_p999,97,96470,0.10054939359386338,raw p99.9=76.96429319444465; retained
+canonical_delivered,extreme_promise_error_days_above_p999,95,96470,0.09847621022079403,raw p99.9=55.0; retained

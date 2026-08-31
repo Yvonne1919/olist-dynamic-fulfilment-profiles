@@ -1,0 +1,7 @@
+population,variable,n,min,p05,p10,p25,p50,p75,p90,p95,max,mean
+canonical,actual_delivery_days,96470,0,3,4,7,10,16,23,29,210,12.4968487613
+canonical,promised_lead_days,96470,3,11,14,19,24,29,35,39,156,24.3727376386
+canonical,promise_error_days,96470,-147,-26,-22,-17,-12,-7,-2,3,188,-11.8758888774
+reviewed,actual_delivery_days,95824,0,3,4,7,10,16,23,29,208,12.4553452162
+reviewed,promised_lead_days,95824,3,11,14,19,24,29,35,39,156,24.3684150109
+reviewed,promise_error_days,95824,-147,-26,-22,-17,-12,-7,-2,3,188,-11.9130697946

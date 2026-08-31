@@ -1,0 +1,9 @@
+population_or_object,n,period_or_rule,role_and_timing
+All placed orders,99441,2016-2018 release,Unconditional availability and status denominator; includes non-delivered statuses.
+Canonical delivered orders,96470,Observed final delivery,"Calendar-day D, P, E and delivered-outcome descriptive population."
+Selected reviewed delivered orders,95824,One deterministic usable review,"Primary RQ1 observational population; 4,653 reviews precede delivery."
+Reviews at/after delivery,91171,Timing sensitivity,RQ1c sensitivity; changes the estimand and may itself be selected.
+Frozen final order frame,91254,Purchase-time predictors plus observed final target,Development/later/terminal order experiment population.
+Order development,38477,Earlier purchases,Model and calibration selection only.
+Later monthly cohorts,40270,2018-01 to 2018-06,"Six chronological evaluations; 3,477 breached orders."
+Terminal stress,12507,2018-07-01 to 2018-08-29,Separate stress evidence; 601 breached orders.

@@ -1,0 +1,7 @@
+stage_or_profile,reader_definition,entity_scheme_estimator,window_lag_kappa,confirmation_or_role,order_payload
+Selection chain,"3,024 candidates to 2,031 evidence-eligible to 97 non-dominated to 16 selected to 14 next-stage eligible to 5 representatives",Development-only Pareto and tie-break rules,30/60/90-day candidates; all 16 selected used 90 days,Five frozen representatives; four process profiles in main ladders,Not applicable
+S1,Seller pre-handoff duration level,seller_id; Scheme C; P1,90d; lag 14d; no binary kappa,Strongly confirmed; 6/6 favourable months,"score, log1p support, cold start, posterior SE, freshness"
+S2,Long pre-handoff-duration risk above 7.1645d,seller_id; Scheme A; P1,90d; lag 0; kappa 10,Strongly confirmed; 6/6,same metadata payload
+R1,State-OD transit duration level,state_od; Scheme A; P0,90d; lag 0; no kappa,Partially confirmed; 6/6,same metadata payload
+R2,State-OD transit tail risk above 14.1079d,state_od; Scheme A; P1,90d; lag 0; kappa 10,Partially confirmed; 6/6,same metadata payload
+M5 endpoint,Secondary state-OD historical final-breach profile,state_od; Scheme A; P1,90d; lag 0; kappa 100,Secondary comparison only,same metadata payload

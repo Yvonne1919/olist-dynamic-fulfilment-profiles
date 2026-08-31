@@ -1,0 +1,18 @@
+% Evidence: figure_sources/final/F4C_matched_selected_P1_shrinkage.csv.
+\begin{table}[H]
+\centering
+\caption{Raw and empirical-Bayes (EB) loss on matched later rows for selected profiles. Lower is better.}
+\label{tab:raw-eb-reader-summary}
+\small
+\renewcommand{\arraystretch}{1.1}
+\begin{tabularx}{\textwidth}{@{}l l r r Y@{}}
+\toprule
+Target type & Metric & Raw & EB & Interpretation \\
+\midrule
+Binary tail & Brier & .05845 & .05670 & Modest improvement \\
+Binary tail & Log loss & .31395 & .23404 & Substantial improvement \\
+Continuous & log-MAE & .41645 & .41606 & Little change \\
+Continuous & log-RMSE & .52776 & .52708 & Little change \\
+\bottomrule
+\end{tabularx}
+\end{table}

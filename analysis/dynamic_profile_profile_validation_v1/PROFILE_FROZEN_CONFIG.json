@@ -1,0 +1,143 @@
+{
+  "analysis_id": "dynamic_profile_profile_validation_v1",
+  "frozen_at_utc": "2026-08-22T18:50:43Z",
+  "scope": {
+    "final_order_model_allowed": false,
+    "business_policy_allowed": false,
+    "thesis_edit_allowed": false,
+    "phase2a_reinterpretation_allowed": false
+  },
+  "canonical_assembler": {
+    "path": "analysis/profile_pivot_phase2a/scripts/data_pipeline.py",
+    "sha256": "0c4cad3c99db268292253abd26e2070ccf2a286337bcfe9fb76fb3768c44ab8d"
+  },
+  "v1_1_raw_hash_source": "analysis/dynamic_profile_eda_v1_1/RUN_MANIFEST.json",
+  "audit_endpoint_proxy": "2018-10-17 13:22:46",
+  "audit_endpoint_claim": "retrospective proxy only; not administrative closure",
+  "terminal_maturity_availability_threshold": 0.95,
+  "terminal_score_distribution_shift": {
+    "reference_period": "locked_confirmation",
+    "weighting": "future_order_rows_descriptive",
+    "metrics": ["p10_difference", "median_difference", "p90_difference", "wasserstein_distance"]
+  },
+  "time": {
+    "warmup_first_snapshot": "2016-12-03",
+    "development": {"start": "2017-04-01", "end_exclusive": "2018-01-01"},
+    "confirmation": {"start": "2018-01-01", "end_exclusive": "2018-07-01"},
+    "terminal": {"start": "2018-07-01", "end_inclusive": "2018-08-30"},
+    "availability_operator": "<",
+    "anchor_step_days": 7,
+    "future_horizons_days": [7, 30],
+    "development_confirmation_require_full_horizon_containment": true,
+    "anchor_origin": "2017-04-01",
+    "anchor_cadence_is_global_across_phases": true,
+    "expected_valid_anchor_counts": {"development_7d": 39, "development_30d": 36, "confirmation_7d": 25, "confirmation_30d": 21, "terminal_7d": 7, "terminal_30d": 4},
+    "terminal_requires_full_horizon_containment": true
+  },
+  "process_quality": {
+    "negative_handling": "audit_and_exclude_from_handling_level_and_tail",
+    "negative_transit": "audit_and_exclude_from_transit_level_and_tail",
+    "clip_negative": false
+  },
+  "sample_contract": {
+    "profile_history": "canonical_delivered_96470_target_valid",
+    "primary_future_label_sample": "canonical_delivered_target_valid",
+    "future_exposure_denominator": "all_placed_99441",
+    "mapping_cold_start_denominator": "all_placed_99441",
+    "observed_noncanonical_six": "audit_only_not_primary_label"
+  },
+  "targets": {
+    "seller_id": ["handling_level", "handling_tail", "final_breach", "positive_late_severity"],
+    "state_od": ["transit_level", "transit_tail", "final_breach", "positive_late_severity"],
+    "region_od": ["transit_level", "transit_tail", "final_breach", "positive_late_severity"]
+  },
+  "diagnostic_granularities": ["seller_x_customer_region", "zip2_od"],
+  "tail_threshold": {"quantile": 0.9, "method": "linear", "history_end_exclusive": "2017-04-01", "event_operator": ">"},
+  "schemes": {
+    "A": {"windows_days": [30, 60, 90], "definition": "availability in [t-w,t)"},
+    "C": {
+      "windows_days": [30, 60, 90],
+      "lags_by_target": {
+        "handling_level": [14, 21], "handling_tail": [14, 21],
+        "transit_level": [30, 45], "transit_tail": [30, 45],
+        "final_breach": [30, 45], "positive_late_severity": [30, 45]
+      },
+      "definition": "purchase in [t-L-w,t-L) and availability<t"
+    }
+  },
+  "binary_eb": {
+    "kappa_candidates": [10, 20, 50, 100],
+    "parent_min_support": 20,
+    "interval": "equal_tail_beta_95"
+  },
+  "continuous_eb": {
+    "scale": "log1p_days",
+    "variance_floor": 1e-10,
+    "between_variance": "weighted_entity_mean_moments_truncated_at_zero",
+    "degenerate_fallback": "parent",
+    "degenerate_invalid_reason": "degenerate_variance_parent_fallback",
+    "interval_z": 1.959963984540054
+  },
+  "parents": {
+    "seller_id": ["global", "seller_state"],
+    "state_od": ["global", "region_od"],
+    "region_od": ["global"]
+  },
+  "p2": {
+    "monthly_row_origins": true,
+    "minimum_training_rows": 200,
+    "minimum_binary_class_count": 20,
+    "binary_model": {"type": "LogisticRegression", "penalty": "l2", "C": 1.0, "solver": "liblinear", "max_iter": 500, "class_weight": null, "random_state": 42},
+    "continuous_model": {"type": "Ridge", "alpha": 1.0},
+    "binary_offset_kappa_candidates": [10, 20, 50, 100],
+    "binary_offset_penalty": "kappa_times_mu_ref_times_one_minus_mu_ref",
+    "binary_offset_tolerance": 1e-10,
+    "binary_offset_max_iter": 100,
+    "features_numeric": ["b0__promised_delivery_days", "b0__n_items", "b0__n_unique_products", "b0__n_unique_sellers", "b0__total_price", "b0__total_freight_value", "b0__freight_to_price_ratio", "b0__avg_product_weight_g", "b0__avg_product_volume_cm3", "b0__max_product_dimension_cm", "b0__category_diversity", "b0__customer_seller_same_state", "b0__distance_km", "b0__purchase_month_num", "b0__purchase_weekday", "b0__purchase_hour", "b0__is_weekend_purchase", "b0__multi_item", "b0__multi_product"],
+    "features_categorical": ["b0__customer_state", "b0__main_seller_state", "b0__main_product_category", "b0__distance_band"],
+    "excluded_b0_identity_feature": "b0__route_region",
+    "forbidden_features": ["order_id", "seller_id", "state_od", "region_od", "label_available_at", "outcome", "profile_score", "order_delivered_customer_date", "order_delivered_carrier_date", "review_score", "hrd_label", "realised_daily_order_count", "realised_daily_gmv"]
+  },
+  "levels": {
+    "support_candidates": [5, 10, 20],
+    "uncertainty_unknown_rule": "interval_nonfinite_or_spans_both_fixed_cutoffs",
+    "weighted_quantiles": [0.33, 0.67],
+    "weight": "development_future_7d_all_placed_order_exposure",
+    "labels": ["Unknown", "Low", "Medium", "High"]
+  },
+  "validity": {
+    "minimum_valid_anchor_fraction": 0.75,
+    "minimum_future_orders_for_primary_score": 30,
+    "minimum_binary_class_count_per_anchor": 5,
+    "minimum_common_entities_for_rank": 10,
+    "maximum_single_month_positive_improvement_share": 0.50,
+    "required_support_strata": [5, 10, 20]
+  },
+  "pareto": {
+    "numeric_equality_tolerance": 1e-12,
+    "binary_logloss_equivalence": 0.001,
+    "binary_brier_equivalence": 0.0005,
+    "continuous_weighted_spearman_equivalence": 0.02,
+    "continuous_relative_mae_equivalence": 0.01,
+    "binary_equivalence_requires_logloss_and_brier": true,
+    "continuous_equivalence_requires_spearman_and_mae": true,
+    "simplicity_order": ["P0", "P1", "P2"],
+    "max_confirmation_candidates_per_target_granularity": 2
+  },
+  "uncertainty": {"confidence": 0.95, "entity_cluster_bootstrap_replicates": 500, "month_block_bootstrap_replicates": 500, "seed": 20260823},
+  "hrd": {"source": "analysis/dynamic_profile_eda_v1_1", "primary_definition": "both_top10", "all_definitions": ["order_top10", "order_top5", "gmv_top10", "gmv_top5", "both_top10", "both_top5"], "predictor_allowed": false},
+  "stage_gate": {
+    "development_masks_purchase_on_or_after": "2018-01-01",
+    "freeze_file": "PROFILE_SELECTION_FREEZE.json",
+    "freeze_sha_sidecar": "PROFILE_SELECTION_FREEZE.sha256",
+    "confirmation_requires_fresh_process": true,
+    "confirmation_requires_hash_token": true
+  },
+  "daily_storage": {
+    "row_artifact": "PROFILE_DAILY_SCORES.csv.gz",
+    "index_artifact": "PROFILE_DAILY_SCORES.csv",
+    "gzip_mtime": 0,
+    "selected_candidates_only": true
+  },
+  "determinism": {"float_format": "%.12g", "date_format": "%Y-%m-%d", "na_rep": "", "analytical_sorting": "explicit_key_order"}
+}

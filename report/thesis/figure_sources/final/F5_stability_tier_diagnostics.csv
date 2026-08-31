@@ -1,0 +1,10 @@
+group,metric,level,value,display_unit,aggregation
+Stability,Median daily rank correlation,,0.9966626,correlation,10082 valid consecutive-day rows across 16 selected candidates
+Stability,Median tier-change share,,0.003717472,share,10082 valid consecutive-day rows across 16 selected candidates
+Stability,Median diagonal persistence,,0.9833179,share,229 valid diagonal-transition rows across 16 selected candidates
+Tier outcome,Binary event rate (%),Low,4.0705954894,percent,row-wise median across 58 valid candidate-period-horizon cells
+Tier outcome,Binary event rate (%),Medium,6.2832489944,percent,row-wise median across 56 valid candidate-period-horizon cells
+Tier outcome,Binary event rate (%),High,9.8945762182,percent,row-wise median across 72 valid candidate-period-horizon cells
+Tier outcome,Continuous outcome (days),Low,2.551008874095,days,row-wise median across 24 valid candidate-period-horizon cells
+Tier outcome,Continuous outcome (days),Medium,4.220615427625,days,row-wise median across 24 valid candidate-period-horizon cells
+Tier outcome,Continuous outcome (days),High,7.143479196625,days,row-wise median across 24 valid candidate-period-horizon cells

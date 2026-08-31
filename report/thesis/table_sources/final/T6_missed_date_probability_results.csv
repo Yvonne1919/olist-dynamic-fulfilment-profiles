@@ -1,0 +1,7 @@
+comparison,logistic_monthly_delta,logistic_months,logistic_label,logistic_pooled_delta,xgb_monthly_delta,xgb_months,xgb_label,xgb_pooled_delta
+Issued promise to current context (M0 to M1),-0.002676 / -0.000574,3/6,No profile label,+0.010735 / +0.000221,-0.000880 / -0.000123,4/6,No profile label,+0.000765 / +0.000012
+Seller pre-handoff block (M1 to M2),-0.003630 / -0.000410,6/6,Supported,-0.006315 / -0.000642,-0.000141 / -0.000012,3/6,Mixed,+0.000573 / +0.000058
+State-OD transit block (M1 to M3),-0.009341 / -0.000967,3/6,Mixed,-0.015668 / -0.000992,-0.000041 / +0.000018,3/6,Not-supported,-0.001775 / -0.000181
+Combined process block (M1 to M4),-0.011808 / -0.001245,4/6,Supported,-0.021884 / -0.001865,-0.000906 / -0.000128,4/6,Supported,-0.003044 / -0.000303
+Secondary endpoint (M4 to M5),+0.001339 / +0.000177,2/6,No formal label,+0.001943 / +0.000253,+0.000734 / +0.000111,2/6,No formal label,+0.001409 / +0.000233
+Two event interactions (M4 to M4E),+0.000430 / +0.000140,1/6,No formal label,+0.000813 / +0.000137,+0.000085 / -0.000001,3/6,No formal label,-0.000356 / -0.000034

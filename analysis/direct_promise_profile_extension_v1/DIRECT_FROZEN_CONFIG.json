@@ -1,0 +1,148 @@
+{
+  "analysis_id": "direct_promise_profile_extension_v1",
+  "frozen_date": "2026-08-29",
+  "scope": {
+    "profile_reselection_allowed": false,
+    "current_context_in_direct_ladder_allowed": false,
+    "thesis_edit_allowed": false,
+    "prior_output_edit_allowed": false,
+    "results_registry_edit_allowed": false,
+    "concurrent_workspace_exclusions": [
+      "analysis/all_mature_history_sensitivity_v1"
+    ]
+  },
+  "sources": {
+    "order_protocol": ["analysis/order_breach_severity_v1/ORDER_PROTOCOL.md", "27c6a871a8e67d4349c3f27b16497b3094435a8a7e8ffacdfff6954a8f64a599"],
+    "order_config": ["analysis/order_breach_severity_v1/ORDER_FROZEN_CONFIG.json", "675fc4079f770b701f67a8aa46247c38caf202bafe51815912884efd5532f0a2"],
+    "order_selection": ["analysis/order_breach_severity_v1/ORDER_MODEL_SELECTION_FREEZE.json", "18fb7b8a78ddca069d477450f9d41d94d6c251d0b63609f1f61904ca8fe28c1b"],
+    "order_model_frame": ["analysis/order_breach_severity_v1/working/ORDER_MODEL_FRAME.csv.gz", "a6d4ea5e457fb16115588bf96c200086a69b750e8b7b7ece1538846a303a71f3"],
+    "order_model_frame_receipt": ["analysis/order_breach_severity_v1/working/ORDER_MODEL_FRAME_RECEIPT.json", "7fb4ba74938cd681b88ca40904fdaeff8c411471b7e9061103d4257664ece23f"],
+    "profile_protocol": ["analysis/dynamic_profile_profile_validation_v1/PROFILE_PROTOCOL.md", "69c6a3167e9434cb0c63809998f89e02428a7ee22dcaf9392dee62e036b2b6df"],
+    "profile_config": ["analysis/dynamic_profile_profile_validation_v1/PROFILE_FROZEN_CONFIG.json", "7494cd3ddfe12514d96f75d5c765b920ca6b4a39da7561632901ead5b77c5d02"],
+    "profile_selection": ["analysis/dynamic_profile_profile_validation_v1/PROFILE_SELECTION_FREEZE.json", "f2409082543bca174c13a2ba94481d2d03c7413021232678ff139438ece69742"],
+    "profile_daily": ["analysis/dynamic_profile_profile_validation_v1/PROFILE_DAILY_SCORES.csv.gz", "ff3c3f19982714087b9309e03fb35d99bf9039a574b819afa2b6b544e330b56c"],
+    "profile_parent": ["analysis/dynamic_profile_profile_validation_v1/PROFILE_PARENT_STRUCTURE.csv", "da0ae9431165f8bc635f6805ef89d79ef8bf28802aed53c50020596415593aa4"],
+    "profile_candidates": ["analysis/dynamic_profile_profile_validation_v1/PROFILE_SELECTED_CANDIDATES.csv", "b8a4cb4b71a09493c9db5fa8da5248078e2906ceb0c7faad46a6770433358659"],
+    "confirmation_labels": ["analysis/dynamic_profile_profile_validation_v1/working/CONFIRMATION_LABELS.csv", "1cdca2914de4a85edec10529ae6ff7c8c134d28b15091f861874095fa9207ee4"],
+    "confirmation_months": ["analysis/dynamic_profile_profile_validation_v1/working/CONFIRMATION_BY_MONTH_FOR_LABELS.csv", "dbc29ad31b30ada32ec7be6d00698a1ac207c7d6930d4d2a75dbc8bcb518a103"],
+    "project_charter": ["docs/thesis/draft_0828/OLIST_PROFILE_PIVOT_PROJECT_CHARTER_2026-08-21.md", "4aeb9ec87c14b208902a5dca74a00f7475ac4df0074da764518ea8e44c0bbe42"],
+    "results_registry": ["RESULTS_REGISTRY.md", "b0d0576283db3521524c1b456b2db05bb1c7f5f91ae3d038983f36e46a775969"],
+    "rq_method_evidence_ledger": ["docs/thesis/RQ_METHOD_EVIDENCE_LEDGER.md", "f8b18c2ec0714d597d4cc1a8fa1f5c50b2ce8b7953cf7115c78616796ea985eb"],
+    "project_context": ["PROJECT_CONTEXT.md", "59a1d61883615959cfb1113c34fadef53ef76570bfc15aae5361d3d8568e4c64"],
+    "decision_log": ["DECISION_LOG.md", "c9ee93610b46459d5b32a6e8bf63b8c799834c2b88aca0598b01d0d3ec15aa0e"],
+    "latest_thesis_pdf": ["report/thesis/main.pdf", "c94258e6ec8c9bf8a1fd1821870d66321bab83553252dfa23c3586972979cbab"],
+    "latest_thesis_source": ["report/thesis/main_final.tex", "9c8f8b482a483d424bbf51b59358ba53a260d38244c2869cdeeba0dd8dc1316e"],
+    "thesis_table_profile_blocks": ["report/thesis/tables/final/t03_profile_selection_frozen_blocks.tex", "358012e8d2a57137264fd49aaa059547138a0bafc0aa184b92d3c46d1cb105dd"],
+    "thesis_table_fitted_models": ["report/thesis/tables/final/t04_method_selection_fitted_specifications.tex", "9f0af575a64a76d68b2c73e9e315351952fcc4920dca9de6f5698f449a12fbb1"],
+    "thesis_table_breach": ["report/thesis/tables/final/t06_missed_date_probability_results.tex", "345f0507cc2789b3b4f26f3c2b0d8087e6b7cbeb87a623c9fdca021d51cf7b63"],
+    "thesis_table_severity": ["report/thesis/tables/final/t07_severity_skill_coverage.tex", "caa8712efecb7aa507e6550b37754ca2e0668c93f6e9ede356b02d8d50fc96b3"],
+    "order_comparison_summary": ["analysis/order_breach_severity_v1/MODEL_COMPARISON_SUMMARY.csv", "ec3bf91512465292759bfd5264a34d4a84f7c5b153d106fab9c8de1f5af9fcb0"],
+    "order_breach_pairs": ["analysis/order_breach_severity_v1/ORDER_BREACH_PAIRED_DIFFERENCES.csv", "c6125a700aca942d9d64209295216bfc352d3cfba032fa68d0e5f6992cabee40"],
+    "order_severity_skill": ["analysis/order_breach_severity_v1/SEVERITY_PINBALL_SKILL.csv", "c72769ddf847a9344f379a7682009bfae161e3a93cc1626b64435d98a19cf6d9"],
+    "order_severity_coverage": ["analysis/order_breach_severity_v1/SEVERITY_COVERAGE.csv", "bcb901625097945b16433b753021b37a5fb812165f0563c12f4d2ccfee4b4a8c"],
+    "order_terminal": ["analysis/order_breach_severity_v1/ORDER_TERMINAL_STRESS.csv", "2b86212e878d6a3c7129f080ee214f963acc0f1daaed50d431524bc55ddf6899"],
+    "order_modeling_code": ["analysis/order_breach_severity_v1/scripts/order_modeling.py", "f4d8276efe63db7030e9e5b81e05534caec1cb8f9c8dfc701641f44d0fa13e07"],
+    "order_experiment_code": ["analysis/order_breach_severity_v1/scripts/order_experiment.py", "7215f102ad84d969784c5cc78b8eb469276b35a5d0fcc7c0c2e0b7a69c8d0e73"]
+  },
+  "protected_roots": [
+    "analysis/* (every pre-existing child except analysis/direct_promise_profile_extension_v1 and the concurrently active analysis/all_mature_history_sensitivity_v1 workspace)",
+    "docs",
+    "report",
+    "results",
+    "src",
+    "AGENTS.md",
+    "PROJECT_CONTEXT.md",
+    "RESULTS_REGISTRY.md",
+    "DECISION_LOG.md",
+    "EVIDENCE_LEDGER.md (when present)"
+  ],
+  "population": {
+    "model_frame_rows": 91254,
+    "model_frame_order_id_sha256": "dbe48400c96d56f1509992f217ce50e9dec0d161fa2b975028c3b13b1dc0ee89",
+    "start": "2017-04-01",
+    "end_inclusive": "2018-08-30",
+    "breach_target": "late_delivery",
+    "severity_target": "positive_late_days",
+    "severity_condition": "positive_late_days_gt_0"
+  },
+  "periods": {
+    "development": ["2017-04-01", "2018-01-01"],
+    "later_months": ["2018-01", "2018-02", "2018-03", "2018-04", "2018-05", "2018-06"],
+    "terminal": ["2018-07-01", "2018-08-31"],
+    "development_inner_folds": [
+      [1, "2017-04-01", "2017-07-01", "2017-07-01", "2017-09-01"],
+      [2, "2017-04-01", "2017-09-01", "2017-09-01", "2017-11-01"],
+      [3, "2017-04-01", "2017-11-01", "2017-11-01", "2018-01-01"]
+    ]
+  },
+  "profiles": {
+    "S1": "handling_level|seller_id|C|w90|l14|P1|parent=global|kappa=na|min_support=5",
+    "S2": "handling_tail|seller_id|A|w90|l0|P1|parent=global|kappa=10|min_support=5",
+    "R1": "transit_level|state_od|A|w90|l0|P0|parent=global|kappa=na|min_support=5",
+    "R2": "transit_tail|state_od|A|w90|l0|P1|parent=global|kappa=10|min_support=5",
+    "payload_suffixes": ["score", "log1p_support", "cold_start", "posterior_se", "freshness_days"],
+    "score_only_suffixes": ["score"],
+    "metadata_only_suffixes": ["log1p_support", "cold_start", "posterior_se", "freshness_days"]
+  },
+  "breach": {
+    "baseline_feature": "promised_delivery_days",
+    "models": {
+      "DP0": [],
+      "DPS": ["S1", "S2"],
+      "DPG": ["R1", "R2"],
+      "DPB": ["S1", "S2", "R1", "R2"]
+    },
+    "representations": ["full", "score_only", "metadata_only"],
+    "families": ["logistic_l2", "xgboost"],
+    "logistic": {"C_grid": [0.01, 0.1, 1.0, 10.0], "penalty": "l2", "solver": "liblinear", "max_iter": 1000, "class_weight": null, "random_state": 20260823},
+    "xgboost": {"objective": "binary:logistic", "eval_metric": "logloss", "tree_method": "hist", "learning_rate_grid": [0.03, 0.05], "max_depth_grid": [3, 6], "min_child_weight_grid": [5, 20], "subsample": 0.8, "colsample_bytree": 0.8, "reg_lambda": 1.0, "reg_alpha": 0.0, "max_estimators": 800, "early_stopping_rounds": 50, "n_jobs": 4, "random_state": 20260823},
+    "selection_metric": "mean_chronological_log_loss",
+    "selection_tie_break": ["mean_brier", "lexical_parameter_json"],
+    "calibration_methods": ["none", "platt", "isotonic"],
+    "calibration_bins": 10
+  },
+  "severity": {
+    "models": {
+      "DQ0": [],
+      "DQS": ["S1", "S2"],
+      "DQG": ["R1", "R2"],
+      "DQB": ["S1", "S2", "R1", "R2"]
+    },
+    "representations": ["full", "score_only"],
+    "families": ["linear_quantile", "xgboost_quantile"],
+    "quantiles": [0.5, 0.9],
+    "linear_alpha_grid": [0.0001, 0.001, 0.01],
+    "linear_solver": "highs",
+    "xgboost_objective": "reg:quantileerror",
+    "xgboost_eval_metric": "quantile",
+    "prediction_floor_days": 0.0
+  },
+  "preprocessing": {
+    "numeric": "median_imputation_with_missing_indicators_then_standardisation_fit_on_training_only",
+    "categorical": "none_in_direct_ladder"
+  },
+  "guards": {
+    "high_support_threshold": 20,
+    "high_support_reversal": "median_delta_log_loss_gt_0_and_median_delta_brier_gt_0",
+    "calibration_wace_worsening_tolerance": 0.005,
+    "calibration_absolute_slope_error_worsening_tolerance": 0.1,
+    "score_contribution": "score_only_median_delta_log_loss_lt_0_or_full_beats_metadata_log_loss_without_brier_worsening",
+    "q90_absolute_coverage_error_worsening_tolerance": 0.02
+  },
+  "evidence_labels": {
+    "breach_precedence": ["Not-supported", "Mixed", "Supported"],
+    "breach_not_supported": "either_median_primary_score_non_improving_or_months_both_at_most_2",
+    "breach_mixed": "exactly_3_of_6_months_or_any_guard_fails_with_both_medians_improving",
+    "breach_supported": "both_medians_improve_and_months_both_at_least_4_and_all_guards_pass",
+    "severity_supported": "positive_median_skill_and_at_least_4_nonnegative_months_and_support_guard_and_q90_coverage_guard",
+    "severity_not_supported": "nonpositive_median_or_fewer_than_4_nonnegative_months_or_low_support_only",
+    "severity_mixed": "required_guard_unavailable_or_failed_without_not_supported_condition"
+  },
+  "determinism": {
+    "seed": 20260823,
+    "float_format": "%.12g",
+    "sort_kind": "mergesort",
+    "paired_block_bootstrap_replicates": 500,
+    "paired_block": "purchase_calendar_week"
+  }
+}

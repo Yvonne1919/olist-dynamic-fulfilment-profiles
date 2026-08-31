@@ -1,0 +1,25 @@
+family,family_display,family_status,quantile,profile_block,comparison,median_skill,favourable_month_count,median_empirical_coverage,coverage_not_materially_worse,evidence_label,label_type
+linear_quantile,Linear Quantile Regression,evaluated,0.5,both,DQB-DQ0,-0.00174129588923,2,0.439692148572,True,Not-supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL
+linear_quantile,Linear Quantile Regression,evaluated,0.5,state_od,DQG-DQ0,-0.00502930204561,3,0.432748909499,True,Not-supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL
+linear_quantile,Linear Quantile Regression,evaluated,0.5,seller,DQS-DQ0,0.000519832297006,3,0.430468668088,True,Not-supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL
+linear_quantile,Linear Quantile Regression,evaluated,0.9,both,DQB-DQ0,-0.00513196219554,1,0.856669428335,True,Not-supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL
+linear_quantile,Linear Quantile Regression,evaluated,0.9,state_od,DQG-DQ0,-0.00250912580818,3,0.859088919945,True,Not-supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL
+linear_quantile,Linear Quantile Regression,evaluated,0.9,seller,DQS-DQ0,-0.00243285667054,1,0.856758017987,True,Not-supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL
+lognormal_ridge,Lognormal Ridge,evaluated,0.5,both,DQB-DQ0,-0.00310524681375,3,0.401972947988,True,Not-supported,ROBUSTNESS EVIDENCE LABEL
+lognormal_ridge,Lognormal Ridge,evaluated,0.5,state_od,DQG-DQ0,-0.00515987974753,1,0.395364841401,True,Not-supported,ROBUSTNESS EVIDENCE LABEL
+lognormal_ridge,Lognormal Ridge,evaluated,0.5,seller,DQS-DQ0,0.00136094074254,3,0.40605668752,True,Not-supported,ROBUSTNESS EVIDENCE LABEL
+lognormal_ridge,Lognormal Ridge,evaluated,0.9,both,DQB-DQ0,-0.00285088634486,3,0.872894228114,True,Not-supported,ROBUSTNESS EVIDENCE LABEL
+lognormal_ridge,Lognormal Ridge,evaluated,0.9,state_od,DQG-DQ0,0.00197958322708,4,0.87616220197,True,Supported,ROBUSTNESS EVIDENCE LABEL
+lognormal_ridge,Lognormal Ridge,evaluated,0.9,seller,DQS-DQ0,-0.00290758792723,2,0.880896826744,True,Not-supported,ROBUSTNESS EVIDENCE LABEL
+random_forest_leaf_weighted_quantile,Leaf-weighted Quantile Random Forest,evaluated,0.5,both,DQB-DQ0,0.00714874448574,4,0.434048557388,True,Supported,ROBUSTNESS EVIDENCE LABEL
+random_forest_leaf_weighted_quantile,Leaf-weighted Quantile Random Forest,evaluated,0.5,state_od,DQG-DQ0,-0.00395175137805,2,0.419681829053,True,Not-supported,ROBUSTNESS EVIDENCE LABEL
+random_forest_leaf_weighted_quantile,Leaf-weighted Quantile Random Forest,evaluated,0.5,seller,DQS-DQ0,0.0154878362616,6,0.436942153061,True,Supported,ROBUSTNESS EVIDENCE LABEL
+random_forest_leaf_weighted_quantile,Leaf-weighted Quantile Random Forest,evaluated,0.9,both,DQB-DQ0,0.0482986236869,5,0.830137451213,True,Supported,ROBUSTNESS EVIDENCE LABEL
+random_forest_leaf_weighted_quantile,Leaf-weighted Quantile Random Forest,evaluated,0.9,state_od,DQG-DQ0,0.0115657390639,4,0.80853588051,False,Not-supported,ROBUSTNESS EVIDENCE LABEL
+random_forest_leaf_weighted_quantile,Leaf-weighted Quantile Random Forest,evaluated,0.9,seller,DQS-DQ0,0.0627893466798,6,0.85176746755,True,Supported,ROBUSTNESS EVIDENCE LABEL
+xgboost_quantile,XGBoost Quantile Regression,evaluated,0.5,both,DQB-DQ0,-0.000152139854368,2,0.438454522315,True,Not-supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL
+xgboost_quantile,XGBoost Quantile Regression,evaluated,0.5,state_od,DQG-DQ0,1.90782815425e-05,3,0.43619548617,True,Not-supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL
+xgboost_quantile,XGBoost Quantile Regression,evaluated,0.5,seller,DQS-DQ0,7.76680377993e-05,4,0.440978703547,True,Not-supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL
+xgboost_quantile,XGBoost Quantile Regression,evaluated,0.9,both,DQB-DQ0,-0.00411813543947,2,0.856943209249,True,Not-supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL
+xgboost_quantile,XGBoost Quantile Regression,evaluated,0.9,state_od,DQG-DQ0,-0.00201792974276,2,0.86018295007,True,Not-supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL
+xgboost_quantile,XGBoost Quantile Regression,evaluated,0.9,seller,DQS-DQ0,-0.00466230145562,0,0.855628499915,True,Not-supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL

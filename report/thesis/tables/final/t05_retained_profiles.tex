@@ -1,0 +1,19 @@
+\begin{table}[H]
+\centering
+\caption{Retained process profiles and their roles in RQ3. EB denotes empirical-Bayes shrinkage; level profiles summarise log-duration and tail profiles estimate unusually slow-outcome risk.}
+\label{tab:retained-profiles}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{@{}>{\RaggedRight\arraybackslash}p{0.065\textwidth} >{\RaggedRight\arraybackslash}p{0.19\textwidth} >{\RaggedRight\arraybackslash}p{0.17\textwidth} >{\RaggedRight\arraybackslash}p{0.13\textwidth} >{\RaggedRight\arraybackslash}X >{\RaggedRight\arraybackslash}p{0.11\textwidth}@{}}
+\toprule
+Profile & Process/target & History & Estimator & Standalone evidence & Role in RQ3 \\
+\midrule
+S1 & Seller pre-handoff level & Lagged purchases; 90 days; 14-day maturity buffer & EB shrinkage & Strongest seller level evidence & Seller block \\
+S2 & Seller pre-handoff tail & Recent mature outcomes; 90 days & EB; $\kappa=10$ & Strongest seller tail evidence & Seller block \\
+R1 & State-OD transit level & Recent mature outcomes; 90 days & Raw & Useful but less robust & State-OD block \\
+R2 & State-OD transit tail & Recent mature outcomes; 90 days & EB; $\kappa=10$ & Useful but less robust & State-OD block \\
+\bottomrule
+\end{tabularx}
+% Evidence: ORDER_FROZEN_CONFIG.json; PROFILE_SELECTED_CANDIDATES.csv; CONFIRMATION_LABELS.csv
+\end{table}

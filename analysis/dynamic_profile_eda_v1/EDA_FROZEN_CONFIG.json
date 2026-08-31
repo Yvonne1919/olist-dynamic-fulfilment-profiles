@@ -1,0 +1,31 @@
+{
+  "analysis_id": "dynamic_profile_eda_v1",
+  "status": "frozen_before_execution",
+  "data_dir": "data/olist_data",
+  "canonical_assembler": "analysis/profile_pivot_phase2a/scripts/data_pipeline.py",
+  "canonical_assembler_sha256": "0c4cad3c99db268292253abd26e2070ccf2a286337bcfe9fb76fb3768c44ab8d",
+  "snapshot_frequency": "daily",
+  "window_days": [30, 60, 90],
+  "maturity_lag_days": [7, 14, 21, 30, 45, 60],
+  "maturity_age_days": [0, 3, 7, 14, 21, 30, 45, 60, 90],
+  "maturity_percentiles": [0.9, 0.95, 0.975, 0.99],
+  "support_thresholds": [5, 10, 20, 50],
+  "future_cohort_days": [7, 30],
+  "strict_availability_rule": "label_available_at < snapshot_date",
+  "snapshot_interval_rule": {
+    "first": "first purchase date plus 90 calendar days, rounded up to midnight",
+    "last_completion": "last dense customer-delivery date (latest date with at least 100 deliveries)",
+    "last_purchase_comparison": "last snapshot date for which purchases through t-60 have at least 95% retrospective customer-delivery maturity"
+  },
+  "availability": {
+    "final_breach": "order_delivered_customer_date",
+    "positive_late_days": "order_delivered_customer_date",
+    "transit": "max(order_delivered_carrier_date, order_delivered_customer_date), strict missing propagation",
+    "seller_handling": "max(order_approved_at, order_delivered_carrier_date), strict missing propagation",
+    "carrier_handoff": "order_delivered_carrier_date",
+    "customer_delivery": "order_delivered_customer_date"
+  },
+  "candidate_hrd_definitions": ["order_top10", "order_top5", "gmv_top10", "gmv_top5", "both_top10", "both_top5"],
+  "zip_prefix_grouping": "first two digits of zero-padded five-digit ZIP prefix; deterministic diagnostic grouping",
+  "models_permitted": false
+}

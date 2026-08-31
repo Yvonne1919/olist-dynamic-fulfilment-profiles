@@ -1,0 +1,5 @@
+target,all_placed_orders,availability_timestamp_observed,availability_by_audit_endpoint,target_value_observed,target_value_valid_for_descriptive_summary,negative_duration_count,missing_component_count,eventual_observation_plateau
+final_breach,99441,96476,96476,96476,96476,0,2965,0.9701833247855512
+positive_late_days,99441,96476,96476,96476,96476,0,2965,0.9701833247855512
+handling,99441,97644,97644,97644,96285,1359,1797,0.9819289830150542
+transit,99441,96475,96475,96475,96452,23,2966,0.9701732685713137

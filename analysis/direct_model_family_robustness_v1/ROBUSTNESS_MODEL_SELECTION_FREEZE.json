@@ -1,0 +1,258 @@
+{
+  "analysis_id": "direct_model_family_robustness_v1",
+  "created_at_utc": "2026-08-29T10:27:05.177026+00:00",
+  "development_only": true,
+  "later_or_terminal_outcomes_used": false,
+  "primary_selection_reproduced": {
+    "analysis_id": "direct_promise_profile_extension_v1",
+    "calibrators": {
+      "logistic_l2": {
+        "DP0": {
+          "isotonic_x": [],
+          "isotonic_y": [],
+          "method": "none",
+          "platt_intercept": null,
+          "platt_slope": null
+        },
+        "DPB": {
+          "isotonic_x": [],
+          "isotonic_y": [],
+          "method": "none",
+          "platt_intercept": null,
+          "platt_slope": null
+        },
+        "DPG": {
+          "isotonic_x": [],
+          "isotonic_y": [],
+          "method": "none",
+          "platt_intercept": null,
+          "platt_slope": null
+        },
+        "DPS": {
+          "isotonic_x": [],
+          "isotonic_y": [],
+          "method": "none",
+          "platt_intercept": null,
+          "platt_slope": null
+        }
+      },
+      "xgboost": {
+        "DP0": {
+          "isotonic_x": [],
+          "isotonic_y": [],
+          "method": "none",
+          "platt_intercept": null,
+          "platt_slope": null
+        },
+        "DPB": {
+          "isotonic_x": [],
+          "isotonic_y": [],
+          "method": "none",
+          "platt_intercept": null,
+          "platt_slope": null
+        },
+        "DPG": {
+          "isotonic_x": [],
+          "isotonic_y": [],
+          "method": "none",
+          "platt_intercept": null,
+          "platt_slope": null
+        },
+        "DPS": {
+          "isotonic_x": [],
+          "isotonic_y": [],
+          "method": "none",
+          "platt_intercept": null,
+          "platt_slope": null
+        }
+      }
+    },
+    "classification_parameters": {
+      "logistic_l2": {
+        "C": 10.0,
+        "class_weight": null,
+        "max_iter": 1000,
+        "penalty": "l2",
+        "random_state": 20260823,
+        "solver": "liblinear"
+      },
+      "xgboost": {
+        "colsample_bytree": 0.8,
+        "eval_metric": "logloss",
+        "learning_rate": 0.03,
+        "max_depth": 3,
+        "min_child_weight": 5.0,
+        "n_estimators": 4,
+        "n_jobs": 4,
+        "objective": "binary:logistic",
+        "random_state": 20260823,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 0.8,
+        "tree_method": "hist"
+      }
+    },
+    "classification_tuning_baseline": "DP0",
+    "development_inner_folds": [
+      [
+        1,
+        "2017-04-01",
+        "2017-07-01",
+        "2017-07-01",
+        "2017-09-01"
+      ],
+      [
+        2,
+        "2017-04-01",
+        "2017-09-01",
+        "2017-09-01",
+        "2017-11-01"
+      ],
+      [
+        3,
+        "2017-04-01",
+        "2017-11-01",
+        "2017-11-01",
+        "2018-01-01"
+      ]
+    ],
+    "direct_config_sha256": "b187add9d353488cbebc63ca4c13b0952335beab4347499cee5aecdb82fe6401",
+    "later_or_terminal_outcomes_used": false,
+    "selected_on": "development_only_before_2018-01-01",
+    "severity_parameters": {
+      "linear_quantile": {
+        "0.5": {
+          "alpha": 0.0001,
+          "solver": "highs"
+        },
+        "0.9": {
+          "alpha": 0.01,
+          "solver": "highs"
+        }
+      },
+      "xgboost_quantile": {
+        "0.5": {
+          "colsample_bytree": 0.8,
+          "eval_metric": "quantile",
+          "learning_rate": 0.03,
+          "max_depth": 3,
+          "min_child_weight": 5.0,
+          "n_estimators": 1,
+          "n_jobs": 4,
+          "objective": "reg:quantileerror",
+          "quantile_alpha": 0.5,
+          "random_state": 20260823,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 0.8,
+          "tree_method": "hist"
+        },
+        "0.9": {
+          "colsample_bytree": 0.8,
+          "eval_metric": "quantile",
+          "learning_rate": 0.03,
+          "max_depth": 3,
+          "min_child_weight": 5.0,
+          "n_estimators": 5,
+          "n_jobs": 4,
+          "objective": "reg:quantileerror",
+          "quantile_alpha": 0.9,
+          "random_state": 20260823,
+          "reg_alpha": 0.0,
+          "reg_lambda": 1.0,
+          "subsample": 0.8,
+          "tree_method": "hist"
+        }
+      }
+    },
+    "severity_tuning_baseline": "DQ0",
+    "source_model_frame_path": "analysis/order_breach_severity_v1/working/ORDER_MODEL_FRAME.csv.gz",
+    "source_model_frame_sha256": "a6d4ea5e457fb16115588bf96c200086a69b750e8b7b7ece1538846a303a71f3"
+  },
+  "random_forest": {
+    "calibrators": {
+      "DP0": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "platt",
+        "platt_intercept": -3.2669675813676013,
+        "platt_slope": -0.0035488316465049187
+      },
+      "DPB": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      },
+      "DPG": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "platt",
+        "platt_intercept": -2.2776072766976103,
+        "platt_slope": 0.23299263431942477
+      },
+      "DPS": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      }
+    },
+    "parameters": {
+      "class_weight": null,
+      "grid_type": "recovered_singleton",
+      "max_features": "sqrt",
+      "min_samples_leaf": 20,
+      "n_estimators": 250,
+      "n_jobs": -1,
+      "preprocessor": "historical_numeric_median_then_standard_scaler_without_missing_indicators",
+      "random_state": 42
+    }
+  },
+  "severity_alternatives": {
+    "lognormal_ridge": {
+      "0.5": {
+        "alpha": 1.0,
+        "grid_type": "recovered_singleton",
+        "quantile_formula": "exp(location_plus_standard_normal_quantile_times_sigma)",
+        "residual_sigma": "training_residual_standard_deviation_ddof_1",
+        "solver": "lsqr",
+        "target_transform": "natural_log"
+      },
+      "0.9": {
+        "alpha": 1.0,
+        "grid_type": "recovered_singleton",
+        "quantile_formula": "exp(location_plus_standard_normal_quantile_times_sigma)",
+        "residual_sigma": "training_residual_standard_deviation_ddof_1",
+        "solver": "lsqr",
+        "target_transform": "natural_log"
+      }
+    },
+    "random_forest_leaf_weighted_quantile": {
+      "0.5": {
+        "grid_type": "recovered_singleton",
+        "max_features": 0.7,
+        "min_samples_leaf": 10,
+        "n_estimators": 100,
+        "n_jobs": 4,
+        "random_state": 20260828,
+        "weight_rule": "each_tree_total_1_over_T_uniform_across_all_training_rows_in_reached_leaf"
+      },
+      "0.9": {
+        "grid_type": "recovered_singleton",
+        "max_features": 0.7,
+        "min_samples_leaf": 10,
+        "n_estimators": 100,
+        "n_jobs": 4,
+        "random_state": 20260828,
+        "weight_rule": "each_tree_total_1_over_T_uniform_across_all_training_rows_in_reached_leaf"
+      }
+    }
+  },
+  "spline_logistic": {
+    "reason": "no_applicable_exact_predictive_direct_feature_spline_specification_or_grid_recovered",
+    "status": "blocked"
+  }
+}

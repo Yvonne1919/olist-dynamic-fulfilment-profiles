@@ -1,0 +1,5 @@
+family_quantile,q2_seller_skill_months_label,q3_state_od_skill_months_label,q4_combined_skill_months_label,pooled_coverage_or_boundary
+Linear Q50,+0.001055; 4/6; Not-supported (high-support guard),+0.002392; 4/6; Supported,+0.003554; 5/6; Supported,Pooled skill vs Q1: -0.000807 / +0.004403 / +0.004068
+XGBoost Q50,-0.001241; 1/6; Not-supported,-0.001726; 3/6; Not-supported,+0.000032; 3/6; Not-supported,No XGBoost Q50 block supported
+Linear Q90,-0.000072; 3/6; Not-supported,-0.000160; 2/6; Not-supported,-0.001426; 3/6; Not-supported,Later-pooled coverage Q1-Q4: 0.8760-0.8735
+XGBoost Q90,+0.025481; 4/6; Supported,+0.026592; 5/6; Supported,+0.008561; 3/6; Not-supported,Coverage 0.8654-0.8772; supported blocks do not beat unconditional Q90 pooled

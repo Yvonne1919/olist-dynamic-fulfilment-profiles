@@ -1,0 +1,7 @@
+stage_order,stage,count,detail
+1,Candidate rules,3024,Full development grid
+2,Evidence eligible,2031,Minimum evidence passes
+3,Non-dominated,97,Pareto frontier
+4,Selected,16,Subsequent confirmation
+5,Eligible,14,2 Strong + 12 Partial
+6,Representatives,5,4 process + 1 secondary endpoint

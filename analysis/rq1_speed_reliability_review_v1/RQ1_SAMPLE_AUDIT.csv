@@ -1,0 +1,25 @@
+metric,value,expected,unit,status,definition
+canonical_assembler_sha256,0c4cad3c99db268292253abd26e2070ccf2a286337bcfe9fb76fb3768c44ab8d,0c4cad3c99db268292253abd26e2070ccf2a286337bcfe9fb76fb3768c44ab8d,sha256,PASS,Frozen Phase2A canonical assembler.
+canonical_delivered_orders,96470,96470,orders,PASS,Canonical delivered analytical population.
+canonical_unique_order_ids,96470,96470,orders,PASS,One row per canonical order.
+legacy_reconciled_orders,96470,96470,orders,PASS,Legacy RQ1 loader/target reconciliation.
+legacy_id_mismatches,0,0,orders,PASS,Per-order canonical/legacy ID comparison.
+legacy_promise_error_mismatches,0,0,orders,PASS,Per-order normalised error comparison.
+reviewed_orders,95824,95824,orders,PASS,Exactly one selected usable review per order.
+reviewed_unique_order_ids,95824,95824,orders,PASS,One reviewed row per order.
+orders_without_usable_review,646,646,orders,PASS,Excluded only from review-outcome analysis.
+raw_review_rows_linked,96353,96353,review rows,PASS,Raw review rows linked to the canonical delivered population before order-level selection.
+orders_with_multiple_review_records,525,525,orders,PASS,Canonical orders with multiple linked raw review records.
+orders_with_conflicting_review_scores,189,189,orders,PASS,Canonical orders with multiple distinct valid review scores.
+selected_review_sha256,3b89feb2bbb0ca0c985374dfcc6de903726a4d6aa5ad558dacc828d947df0570,3b89feb2bbb0ca0c985374dfcc6de903726a4d6aa5ad558dacc828d947df0570,sha256,PASS,Sorted deterministic selected-review mapping.
+low_review_2_orders,12272,12272,orders,PASS,Primary review_score <=2 target.
+low_review_3_orders,20188,20188,orders,PASS,Sensitivity review_score <=3 target.
+reviews_before_delivery,4653,4653,orders,PASS,Selected review answer timestamp precedes recorded customer delivery.
+reviews_after_promise_before_delivery,4432,4432,orders,PASS,Selected review follows the promised date but precedes recorded customer delivery.
+reviews_before_delivery_and_before_promised_date,221,221,orders,PASS,Selected review precedes both recorded customer delivery and the promised date.
+reviews_at_or_after_delivery,91171,91171,orders,PASS,Timestamp-level timing sensitivity sample.
+purchase_month_min,2016-09,2016-09,YYYY-MM,PASS,Earliest reviewed purchase month.
+purchase_month_max,2018-08,2018-08,YYYY-MM,PASS,Latest reviewed purchase month.
+date_identity_failures,0,0,orders,PASS,D must equal P + E.
+negative_actual_delivery_days,0,0,orders,PASS,No invalid actual duration retained.
+negative_promised_lead_days,0,0,orders,PASS,No invalid promised lead retained.

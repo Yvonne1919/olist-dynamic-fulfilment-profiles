@@ -1,0 +1,7 @@
+feature_family,business_interpretation,manifest_content,model_role
+Issued estimate,Length or tightness of the recorded customer-facing promise,promised_delivery_days,M0 and retained in M1-M4
+Order composition,Basket and cross-seller coordination complexity,"item, product and seller counts plus multi-item, multi-product and multi-seller indicators",M1-M4
+Price freight and product context,Merchandise scale quoted logistics burden and parcel characteristics,"price, freight, freight-to-price ratio, weight, volume, maximum dimension and category diversity",M1-M4
+Geography and distance,Static purchase-time transport context,"customer and main-seller state, same-state flag, distance, distance band and region-OD",M1-M4
+Calendar and known events,Purchase timing and issued-window calendar exposure,"purchase month, weekday and hour; weekends; public-holiday distances/counts; project-defined event periods",M1-M4
+Historical process profiles,Point-in-time mature process history,"S1/S2 seller payloads; R1/R2 state-OD payloads; each payload contains score, log-support, cold start, uncertainty and freshness",Seller only in M2; state-OD only in M3; both in M4

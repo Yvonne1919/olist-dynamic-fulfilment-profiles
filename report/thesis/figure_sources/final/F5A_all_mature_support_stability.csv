@@ -1,0 +1,49 @@
+profile_code,metric,selected_90d_value,all_mature_value,metric_label,display,profile_label
+R1,cold_start_share_all_placed,0.00455580865604,0.00204638472033,"Cold-start
+share","0.46% /
+0.20%",State-OD level
+R1,support_median,850,2921,"Median
+support","850 /
+2,921",State-OD level
+R2,cold_start_share_all_placed,0.00455580865604,0.00204638472033,"Cold-start
+share","0.46% /
+0.20%",State-OD tail risk
+R2,support_median,850,2921,"Median
+support","850 /
+2,921",State-OD tail risk
+S1,cold_start_share_all_placed,0.0685805422648,0.0611376927166,"Cold-start
+share","6.86% /
+6.11%",Seller level
+S1,support_median,31,71,"Median
+support","31 /
+71",Seller level
+S2,cold_start_share_all_placed,0.0425422860072,0.0340244550771,"Cold-start
+share","4.25% /
+3.40%",Seller tail risk
+S2,support_median,34,77,"Median
+support","34 /
+77",Seller tail risk
+R1,posterior_se_median,0.0164916081008,0.00943851028522,"Score
+uncertainty","0.016 /
+0.009",State-OD level
+R2,posterior_se_median,0.0122585113891,0.00625667210247,"Score
+uncertainty","0.012 /
+0.006",State-OD tail risk
+S1,posterior_se_median,0.0771731756381,0.0552592342809,"Score
+uncertainty","0.077 /
+0.055",Seller level
+S2,posterior_se_median,0.025347060559,0.0169570751566,"Score
+uncertainty","0.025 /
+0.017",Seller tail risk
+R1,pct_entities_changing_level,0.00711743772242,0,"Daily tier
+change","0.71% /
+0.00%",State-OD level
+R2,pct_entities_changing_level,0.00714285714286,0.00254452926209,"Daily tier
+change","0.71% /
+0.25%",State-OD tail risk
+S1,pct_entities_changing_level,0.0146379044684,0.00352644836272,"Daily tier
+change","1.46% /
+0.35%",Seller level
+S2,pct_entities_changing_level,0.00242914979757,5.08905852417e-4,"Daily tier
+change","0.24% /
+0.05%",Seller tail risk

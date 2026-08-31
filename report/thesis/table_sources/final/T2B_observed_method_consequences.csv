@@ -1,0 +1,11 @@
+observed_property,methodological_consequence
+Breach imbalance,Report proper probability scores together with ranking metrics
+Monthly prevalence change,Use repeated chronological monthly evaluation
+Right-skewed positive lateness,Model conditional Q50 and Q90 rather than only a binary miss
+Sparse entity history,Retain support shrinkage uncertainty and cold-start status
+Target-specific maturity,Apply strict as-of construction using target availability time
+Geographic coverage trade-off,Compare entity granularities rather than assuming the most detailed level
+Correlated purchase-time descriptors,Use L2-regularised Logistic Regression as the additive benchmark
+Possible nonlinearities and interactions,Use XGBoost as the nonlinear benchmark
+Discrimination versus probability quality,Separate ranking from log loss Brier score and reliability diagnostics
+Quantile skill versus reliability,Report pinball loss and empirical coverage separately

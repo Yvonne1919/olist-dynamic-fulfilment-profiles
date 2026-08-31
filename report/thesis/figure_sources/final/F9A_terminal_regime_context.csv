@@ -1,0 +1,5 @@
+metric,period,value,later_reference,display,relative_to_later
+Breach prevalence,Jan-Jun,0.086342190216,0.086342190216,8.63%,1
+Breach prevalence,Jul-Aug,0.0480530902694,0.086342190216,4.81%,0.5565424058526526
+Mean positive lateness,Jan-Jun,10.6450963474,10.6450963474,10.65 d,1
+Mean positive lateness,Jul-Aug,5.80532445923,10.6450963474,5.81 d,0.5453519883498203

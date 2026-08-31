@@ -1,0 +1,199 @@
+{
+  "analysis_id": "order_breach_severity_v1",
+  "calibrators": {
+    "logistic_l2": {
+      "M0": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      },
+      "M1": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      },
+      "M2": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      },
+      "M3": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      },
+      "M4": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      },
+      "M4E": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      },
+      "M5": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      }
+    },
+    "xgboost": {
+      "M0": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      },
+      "M1": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      },
+      "M2": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      },
+      "M3": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      },
+      "M4": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      },
+      "M4E": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      },
+      "M5": {
+        "isotonic_x": [],
+        "isotonic_y": [],
+        "method": "none",
+        "platt_intercept": null,
+        "platt_slope": null
+      }
+    }
+  },
+  "classification_parameters": {
+    "logistic_l2": {
+      "C": 0.01,
+      "class_weight": null,
+      "max_iter": 1000,
+      "penalty": "l2",
+      "random_state": 20260823,
+      "solver": "liblinear"
+    },
+    "xgboost": {
+      "colsample_bytree": 0.8,
+      "eval_metric": "logloss",
+      "learning_rate": 0.03,
+      "max_depth": 6,
+      "min_child_weight": 5,
+      "n_estimators": 5,
+      "n_jobs": 4,
+      "objective": "binary:logistic",
+      "random_state": 20260823,
+      "reg_alpha": 0.0,
+      "reg_lambda": 1.0,
+      "subsample": 0.8,
+      "tree_method": "hist"
+    }
+  },
+  "config_sha256": "675fc4079f770b701f67a8aa46247c38caf202bafe51815912884efd5532f0a2",
+  "later_or_terminal_outcomes_used": false,
+  "model_frame_sha256": "a6d4ea5e457fb16115588bf96c200086a69b750e8b7b7ece1538846a303a71f3",
+  "prestate_sha256": "524149ff7e9d40603337deb4453237ee1255121c40e335bd92880839b58ffff4",
+  "selection_source": "development_2017-04-01_to_2017-12-31_only",
+  "severity_parameters": {
+    "linear_quantile": {
+      "0.5": {
+        "alpha": 0.01,
+        "solver": "highs"
+      },
+      "0.9": {
+        "alpha": 0.01,
+        "solver": "highs"
+      }
+    },
+    "xgboost_quantile": {
+      "0.5": {
+        "colsample_bytree": 0.8,
+        "eval_metric": "quantile",
+        "learning_rate": 0.03,
+        "max_depth": 6,
+        "min_child_weight": 5,
+        "n_estimators": 13,
+        "n_jobs": 4,
+        "objective": "reg:quantileerror",
+        "quantile_alpha": 0.5,
+        "random_state": 20260823,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 0.8,
+        "tree_method": "hist"
+      },
+      "0.9": {
+        "colsample_bytree": 0.8,
+        "eval_metric": "quantile",
+        "learning_rate": 0.03,
+        "max_depth": 6,
+        "min_child_weight": 5,
+        "n_estimators": 49,
+        "n_jobs": 4,
+        "objective": "reg:quantileerror",
+        "quantile_alpha": 0.9,
+        "random_state": 20260823,
+        "reg_alpha": 0.0,
+        "reg_lambda": 1.0,
+        "subsample": 0.8,
+        "tree_method": "hist"
+      }
+    }
+  },
+  "source_code_hashes": {
+    "EVIDENCE_STATUS.md": "91ded65b1de5b20470712025735e5bd8ef934957006b731a5c7f46e467a4f148",
+    "ORDER_FEATURE_DICTIONARY.md": "4f7f79ae9eea4bd1a8028e8176e6a077237cf76ddc6ab22a0b8205300a0a2dbf",
+    "ORDER_FROZEN_CONFIG.json": "675fc4079f770b701f67a8aa46247c38caf202bafe51815912884efd5532f0a2",
+    "ORDER_PROTOCOL.md": "27c6a871a8e67d4349c3f27b16497b3094435a8a7e8ffacdfff6954a8f64a599",
+    "scripts/__init__.py": "5306bc9588c1cb507903d8dd518ba977520a6fe537a898cba17609b775383010",
+    "scripts/order_experiment.py": "7215f102ad84d969784c5cc78b8eb469276b35a5d0fcc7c0c2e0b7a69c8d0e73",
+    "scripts/order_features.py": "fc84c37feeeefd6017caef825e0fa9620ab323f829f395ea61ab54d85cb6a159",
+    "scripts/order_io.py": "100fea959ff2775e7b5a32a2561ad9b721b00a302ae65519056a6e74baa0ffbe",
+    "scripts/order_modeling.py": "f4d8276efe63db7030e9e5b81e05534caec1cb8f9c8dfc701641f44d0fa13e07",
+    "scripts/order_preflight.py": "fc6fc19ed15890a066a4e992637046c0980ab2e0cdd79bab4c5890608517b2c1",
+    "scripts/order_profiles.py": "5eb4af603ecf5a9ea0d44d6b0c9f79be333f6c7249b1793cb7a064caf592194b",
+    "scripts/order_reporting.py": "706b6e7a2e58347fd2c9cd8f968ab3ab7964c3d101aaa26e1fb0f2911bb05334",
+    "scripts/run_order_experiment.py": "87437117db04fabed42b15f2185eb86b5be6a10dcd56a7ec7d5f5379e1cc7b17",
+    "scripts/test_order_breach_severity.py": "d891e191d0d80072bb9f9051188a1f0fca8f11cbe96dc294a208bdf8a8a062f0"
+  }
+}

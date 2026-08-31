@@ -1,0 +1,5 @@
+profile,process,metric_family,development,confirmation,favourable_months,label
+S1,Seller pre-handoff level,Continuous: parent - candidate log-MAE,0.067132006471,0.073534165507,6,Strongly confirmed
+S2,Seller pre-handoff tail risk,Binary: reference - candidate log loss,0.043056941648,0.063627153350000007,6,Strongly confirmed
+R1,State-OD transit level,Continuous: parent - candidate log-MAE,0.107441123503,0.130329098265,6,Partially confirmed
+R2,State-OD transit tail risk,Binary: reference - candidate log loss,0.061095361605,0.101947847841,6,Partially confirmed

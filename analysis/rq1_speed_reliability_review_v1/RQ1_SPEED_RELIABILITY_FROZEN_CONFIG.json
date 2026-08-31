@@ -1,0 +1,92 @@
+{
+  "analysis_id": "RQ1_SPEED_RELIABILITY_REVIEW_V1",
+  "authorised_scope": "narrow supplementary observational RQ1 study",
+  "as_of_date": "2026-08-24",
+  "expected_sample": {
+    "canonical_delivered_orders": 96470,
+    "reviewed_orders": 95824,
+    "purchase_month_min": "2016-09",
+    "purchase_month_max": "2018-08",
+    "selected_review_rule": [
+      "latest valid review_answer_timestamp",
+      "latest review_creation_date",
+      "lexicographically smallest review_id",
+      "smallest source row"
+    ]
+  },
+  "outcomes": {
+    "primary": "low_review_2 = 1[selected_review_score <= 2]",
+    "sensitivity": "low_review_3 = 1[selected_review_score <= 3]"
+  },
+  "date_convention": "pd.to_datetime(...).dt.normalize(); timedelta.dt.days",
+  "durations": {
+    "actual_delivery_days": "normalized customer delivery date - normalized purchase date",
+    "promised_lead_days": "normalized estimated delivery date - normalized purchase date",
+    "promise_error_days": "normalized customer delivery date - normalized estimated delivery date",
+    "required_identity": "actual_delivery_days = promised_lead_days + promise_error_days"
+  },
+  "promise_error_groups": {
+    "labels": [
+      "very early: <= -14 days",
+      "early: -13 to -7 days",
+      "slightly early: -6 to -1 days",
+      "on promised date",
+      "1 day late",
+      "2-3 days late",
+      "4-7 days late",
+      ">=8 days late"
+    ],
+    "edges": ["-Infinity", -14, -7, -1, 0, 1, 3, 7, "Infinity"],
+    "right_closed": true,
+    "reference": "on promised date"
+  },
+  "actual_duration_groups": {
+    "labels": ["0-3 days", "4-7 days", "8-14 days", "15-21 days", "22+ days"],
+    "edges": [-1, 3, 7, 14, 21, "Infinity"],
+    "right_closed": true,
+    "low_support_threshold": 50
+  },
+  "models": {
+    "family": "binomial GLM with logit link",
+    "covariance": "HC1",
+    "spline": "natural cubic regression spline with centering constraint absorbed for identifiability with the intercept",
+    "spline_df": 4,
+    "model_a": "low_review_2 ~ cr(actual_delivery_days, df=4, constraints='center') + purchase-month fixed effects",
+    "model_b": "low_review_2 ~ cr(actual_delivery_days, df=4, constraints='center') + promise-error group + purchase-month fixed effects",
+    "model_c": "low_review_2 ~ cr(promised_lead_days, df=4, constraints='center') + promise-error group + purchase-month fixed effects",
+    "month_min_orders": 500,
+    "month_reference": "2018-01",
+    "sparse_month_label": "pooled sparse purchase months (<500 orders each)"
+  },
+  "support": {
+    "curve_quantile_min": 0.05,
+    "curve_quantile_max": 0.95,
+    "curve_grid": "inclusive integer days from ceil(p05) to floor(p95)",
+    "common_support_quantile_min": 0.05,
+    "common_support_quantile_max": 0.95
+  },
+  "contrasts": {
+    "speed": "within on-promised-date: adjusted P(D75)-P(D25), durations from on-date orders",
+    "late_4_7": "adjusted P(4-7 days late)-P(on promised date) at deterministic common-support duration",
+    "late_8_plus": "adjusted P(>=8 days late)-P(on promised date) at deterministic common-support duration",
+    "difference": "late_4_7 - speed",
+    "standardisation": "empirical purchase-month distribution",
+    "simulation_seed": 20260824,
+    "simulation_draws": 10000,
+    "interval_quantiles": [0.025, 0.975]
+  },
+  "sensitivities": [
+    "low_review_3",
+    "selected reviews at or after actual customer-delivery timestamp",
+    "fixed actual-duration bins"
+  ],
+  "decision_labels": [
+    "EXPAND_RQ1_TO_SPEED_AND_RELIABILITY",
+    "RETAIN_SIGNED_ERROR_ONLY_RQ1",
+    "ACTUAL_DURATION_ASSOCIATION_WITHOUT_INCREMENTAL_PROMISE_ERROR",
+    "INCONCLUSIVE_RQ1_EXTENSION"
+  ],
+  "figures": 3,
+  "governance_mutation_authorised": false,
+  "thesis_rewrite_authorised": false
+}

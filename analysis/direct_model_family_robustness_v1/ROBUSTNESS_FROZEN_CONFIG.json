@@ -1,0 +1,137 @@
+{
+  "analysis_id": "direct_model_family_robustness_v1",
+  "frozen_date": "2026-08-29",
+  "scope": {
+    "profile_history_variant": "selected_90_day",
+    "all_mature_workspace_consumed": false,
+    "profile_reselection_allowed": false,
+    "current_context_predictors_allowed": false,
+    "later_or_terminal_tuning_allowed": false,
+    "thesis_edit_allowed": false,
+    "prior_output_edit_allowed": false,
+    "registry_or_ledger_edit_allowed": false
+  },
+  "isolation_incident": {
+    "occurred_before_execution_freeze": true,
+    "description": "Two metadata-only pre-model incidents occurred. First, a broad repository search returned exactly two non-empirical manifest metadata lines (leaf_count and protected_leaf_count) from the excluded workspace. Second, the first formal preflight used git status --untracked-files=all, which could enumerate untracked filenames beneath that workspace. No file content, metric, label, model setting, profile definition, data row, or empirical result was exposed or used. Remaining Git status checks are tracked-only and all filesystem traversal uses explicit allowlists.",
+    "non_empirical_lines_exposed": 2,
+    "untracked_filename_enumeration_possible": true,
+    "excluded_workspace_file_content_read": false,
+    "empirical_results_consumed": false,
+    "workspace_used_as_input": false
+  },
+  "sources": {
+    "direct_config": ["analysis/direct_promise_profile_extension_v1/DIRECT_FROZEN_CONFIG.json", "b187add9d353488cbebc63ca4c13b0952335beab4347499cee5aecdb82fe6401"],
+    "direct_selection": ["analysis/direct_promise_profile_extension_v1/DIRECT_MODEL_SELECTION_FREEZE.json", "6acfae6ae4467cfdff4ba2ffe6f375c71b0ea0ad997a0f7bb114ad476c9f28dd"],
+    "direct_model_selection": ["analysis/direct_promise_profile_extension_v1/MODEL_SELECTION.csv", "2a65738a190a2f8d5aea4656c70a23cce0056be601c5d28d1813a888fc3f640b"],
+    "direct_evidence_labels": ["analysis/direct_promise_profile_extension_v1/EVIDENCE_LABELS.csv", "fab159672c7bbf92ec74f4683a79a45de8cffe534a10ad7f61e29828270f84d8"],
+    "direct_experiment_code": ["analysis/direct_promise_profile_extension_v1/scripts/direct_experiment.py", "2304c827cc9389c46bd3166f3e9d6e04a62d57595d57162555ca795d149037cd"],
+    "order_modeling_code": ["analysis/order_breach_severity_v1/scripts/order_modeling.py", "f4d8276efe63db7030e9e5b81e05534caec1cb8f9c8dfc701641f44d0fa13e07"],
+    "order_model_frame": ["analysis/order_breach_severity_v1/working/ORDER_MODEL_FRAME.csv.gz", "a6d4ea5e457fb16115588bf96c200086a69b750e8b7b7ece1538846a303a71f3"],
+    "historical_breach_rf_code": ["src/models/classification.py", "81e347feea17b336b6df7d130960559f7119e78922763169f47331dac851241b"],
+    "historical_breach_experiment_code": ["src/experiments/phase1_classification.py", "e7b07fe655ccd9f17e91868d78db570b9854c6aa20e387a8f6cc8d60a7539ec9"],
+    "archived_historical_severity_code": ["analysis/direct_model_family_robustness_v1/scripts/recovered_severity_model_source.py", "1db71142ba295ed61eb99ee1e160579f9c06583f1532cf3168f41f531d7b05db"],
+    "project_charter": ["docs/thesis/draft_0828/OLIST_PROFILE_PIVOT_PROJECT_CHARTER_2026-08-21.md", "4aeb9ec87c14b208902a5dca74a00f7475ac4df0074da764518ea8e44c0bbe42"],
+    "project_context": ["PROJECT_CONTEXT.md", "59a1d61883615959cfb1113c34fadef53ef76570bfc15aae5361d3d8568e4c64"],
+    "results_registry": ["RESULTS_REGISTRY.md", "b0d0576283db3521524c1b456b2db05bb1c7f5f91ae3d038983f36e46a775969"],
+    "decision_log": ["DECISION_LOG.md", "c9ee93610b46459d5b32a6e8bf63b8c799834c2b88aca0598b01d0d3ec15aa0e"],
+    "rq_method_evidence_ledger": ["docs/thesis/RQ_METHOD_EVIDENCE_LEDGER.md", "f8b18c2ec0714d597d4cc1a8fa1f5c50b2ce8b7953cf7115c78616796ea985eb"],
+    "protection_allowlist_seed": ["analysis/direct_promise_profile_extension_v1/working/INTEGRITY_BEFORE.json", "4d26be7b824e21a09160e8a8f35032f902dc7c12bb880be10f37bd3ca03cd34c"]
+  },
+  "historical_external_provenance": {
+    "severity_source_path_at_recovery": ".cache/mlds-thesis-open-exploratory-20260828/analysis/open_exploratory_extension_2026_08_28/scripts/SEV_run_alternative_models.py",
+    "severity_source_sha256": "b328faf367fedcb2db239bbffd83dc63fd822efcb0f9a61ca819cab6419e65f2",
+    "severity_helper_path_at_recovery": ".cache/mlds-thesis-open-exploratory-20260828/analysis/open_exploratory_extension_2026_08_28/scripts/TGT_SEV_common.py",
+    "severity_helper_sha256": "09ded1e3007461a21025130cae02738036c7cf4f060ebb5e9872e89d30411d99",
+    "required_for_rerun": false,
+    "archived_executable_source": "analysis/direct_model_family_robustness_v1/scripts/recovered_severity_model_source.py"
+  },
+  "direct_result_files": {
+    "model_selection": "MODEL_SELECTION.csv",
+    "breach_monthly": "DIRECT_BREACH_MONTHLY.csv",
+    "breach_pooled": "DIRECT_BREACH_POOLED.csv",
+    "breach_calibration": "DIRECT_BREACH_CALIBRATION.csv",
+    "severity_monthly": "DIRECT_SEVERITY_MONTHLY.csv",
+    "severity_pooled": "DIRECT_SEVERITY_POOLED.csv",
+    "severity_coverage": "DIRECT_SEVERITY_COVERAGE.csv",
+    "terminal": "DIRECT_TERMINAL.csv",
+    "evidence_labels": "EVIDENCE_LABELS.csv"
+  },
+  "protection": {
+    "allowlist_source": "analysis/direct_promise_profile_extension_v1/working/INTEGRITY_BEFORE.json#protection_boundary.roots",
+    "additional_complete_roots": ["analysis/direct_promise_profile_extension_v1"],
+    "excluded_target": "analysis/direct_model_family_robustness_v1",
+    "excluded_concurrent_workspace": "analysis/all_mature_history_sensitivity_v1",
+    "enumerate_analysis_directory": false
+  },
+  "profiles": {
+    "S1": "handling_level|seller_id|C|w90|l14|P1|parent=global|kappa=na|min_support=5",
+    "S2": "handling_tail|seller_id|A|w90|l0|P1|parent=global|kappa=10|min_support=5",
+    "R1": "transit_level|state_od|A|w90|l0|P0|parent=global|kappa=na|min_support=5",
+    "R2": "transit_tail|state_od|A|w90|l0|P1|parent=global|kappa=10|min_support=5",
+    "payload_suffixes": ["score", "log1p_support", "cold_start", "posterior_se", "freshness_days"]
+  },
+  "periods": {
+    "development_inner_folds": [
+      [1, "2017-04-01", "2017-07-01", "2017-07-01", "2017-09-01"],
+      [2, "2017-04-01", "2017-09-01", "2017-09-01", "2017-11-01"],
+      [3, "2017-04-01", "2017-11-01", "2017-11-01", "2018-01-01"]
+    ],
+    "later_months": ["2018-01", "2018-02", "2018-03", "2018-04", "2018-05", "2018-06"],
+    "terminal": ["2018-07-01", "2018-08-31"]
+  },
+  "families": {
+    "breach_primary": ["logistic_l2", "xgboost"],
+    "breach_additional": ["random_forest"],
+    "breach_blocked": ["spline_logistic"],
+    "severity_primary": ["linear_quantile", "xgboost_quantile"],
+    "severity_additional": ["random_forest_leaf_weighted_quantile", "lognormal_ridge"]
+  },
+  "alternative_parameters": {
+    "random_forest": {
+      "grid_type": "recovered_singleton",
+      "n_estimators": 250,
+      "min_samples_leaf": 20,
+      "max_features": "sqrt",
+      "class_weight": null,
+      "random_state": 42,
+      "n_jobs": -1,
+      "preprocessor": "historical_numeric_median_then_standard_scaler_without_missing_indicators"
+    },
+    "random_forest_leaf_weighted_quantile": {
+      "grid_type": "recovered_singleton",
+      "n_estimators": 100,
+      "min_samples_leaf": 10,
+      "max_features": 0.7,
+      "random_state": 20260828,
+      "n_jobs": 4,
+      "weight_rule": "each_tree_total_1_over_T_uniform_across_all_training_rows_in_reached_leaf"
+    },
+    "lognormal_ridge": {
+      "grid_type": "recovered_singleton",
+      "alpha": 1.0,
+      "solver": "lsqr",
+      "target_transform": "natural_log",
+      "residual_sigma": "training_residual_standard_deviation_ddof_1",
+      "quantile_formula": "exp(location_plus_standard_normal_quantile_times_sigma)"
+    }
+  },
+  "reproduction_gate": {
+    "absolute_tolerance": 1e-10,
+    "relative_tolerance": 0.0,
+    "float_persistence_format": "%.12g",
+    "fail_closed_before_alternative_interpretation": true,
+    "non_result_hash_columns": ["fitted_model_sha256", "reference_fitted_model_sha256"]
+  },
+  "evidence": {
+    "direct_primary_labels_are_protected": true,
+    "new_label_namespace": "direct_model_family_robustness_v1",
+    "new_label_type": "ROBUSTNESS EVIDENCE LABEL",
+    "terminal_labels_allowed": false
+  },
+  "determinism": {
+    "seed": 20260823,
+    "float_format": "%.12g",
+    "sort_kind": "mergesort"
+  }
+}

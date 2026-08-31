@@ -1,0 +1,41 @@
+actual_duration_group,promise_error_group,analytical_orders,reviewed_orders,missing_review_orders,review_coverage,low_support_cell
+0-3 days,very early: <= -14 days,2366,2360,6,0.997464074387,False
+0-3 days,early: -13 to -7 days,3485,3471,14,0.995982783357,False
+0-3 days,slightly early: -6 to -1 days,1059,1053,6,0.99433427762,False
+0-3 days,on promised date,42,42,0,1,True
+0-3 days,1 day late,0,0,0,,True
+0-3 days,2-3 days late,0,0,0,,True
+0-3 days,4-7 days late,0,0,0,,True
+0-3 days,>=8 days late,0,0,0,,True
+4-7 days,very early: <= -14 days,12677,12615,62,0.995109252978,False
+4-7 days,early: -13 to -7 days,8515,8476,39,0.995419847328,False
+4-7 days,slightly early: -6 to -1 days,2331,2320,11,0.995280995281,False
+4-7 days,on promised date,140,139,1,0.992857142857,False
+4-7 days,1 day late,45,42,3,0.933333333333,True
+4-7 days,2-3 days late,25,25,0,1,True
+4-7 days,4-7 days late,9,7,2,0.777777777778,True
+4-7 days,>=8 days late,0,0,0,,True
+8-14 days,very early: <= -14 days,20657,20561,96,0.995352664956,False
+8-14 days,early: -13 to -7 days,13690,13610,80,0.994156318481,False
+8-14 days,slightly early: -6 to -1 days,3089,3065,24,0.992230495306,False
+8-14 days,on promised date,207,205,2,0.990338164251,False
+8-14 days,1 day late,107,107,0,1,False
+8-14 days,2-3 days late,115,114,1,0.991304347826,False
+8-14 days,4-7 days late,103,102,1,0.990291262136,False
+8-14 days,>=8 days late,11,11,0,1,True
+15-21 days,very early: <= -14 days,5228,5198,30,0.994261667942,False
+15-21 days,early: -13 to -7 days,6427,6377,50,0.992220320523,False
+15-21 days,slightly early: -6 to -1 days,3586,3562,24,0.993307306191,False
+15-21 days,on promised date,340,336,4,0.988235294118,False
+15-21 days,1 day late,176,175,1,0.994318181818,False
+15-21 days,2-3 days late,181,179,2,0.988950276243,False
+15-21 days,4-7 days late,190,185,5,0.973684210526,False
+15-21 days,>=8 days late,42,42,0,1,True
+22+ days,very early: <= -14 days,1137,1127,10,0.991204925242,False
+22+ days,early: -13 to -7 days,1958,1949,9,0.995403472932,False
+22+ days,slightly early: -6 to -1 days,2439,2419,20,0.991799917999,False
+22+ days,on promised date,563,558,5,0.991119005329,False
+22+ days,1 day late,497,496,1,0.997987927565,False
+22+ days,2-3 days late,724,714,10,0.986187845304,False
+22+ days,4-7 days late,1500,1454,46,0.969333333333,False
+22+ days,>=8 days late,2809,2728,81,0.971164115344,False

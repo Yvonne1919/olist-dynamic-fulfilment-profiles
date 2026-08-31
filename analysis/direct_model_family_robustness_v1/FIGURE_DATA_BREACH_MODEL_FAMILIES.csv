@@ -1,0 +1,13 @@
+family,family_display,family_status,profile_block,comparison,median_delta_log_loss,both_improved_month_count,calibration_not_systematically_worse,evidence_label,label_type,evidence_reason
+logistic_l2,L2 Logistic Regression,evaluated,both,DPB-DP0,-0.0188355042404,5,True,Supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL,both_medians_improve_at_least_four_months_all_guards_pass
+logistic_l2,L2 Logistic Regression,evaluated,state_od,DPG-DP0,-0.0126256584508,3,True,Mixed,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL,exactly_three_both_improved_months
+logistic_l2,L2 Logistic Regression,evaluated,seller,DPS-DP0,-0.00415653020117,6,True,Supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL,both_medians_improve_at_least_four_months_all_guards_pass
+random_forest,Random Forest,evaluated,both,DPB-DP0,-0.00761967829778,3,False,Not-supported,ROBUSTNESS EVIDENCE LABEL,nonimproving_median_or_at_most_two_both_improved_months
+random_forest,Random Forest,evaluated,state_od,DPG-DP0,-0.0110668832408,5,True,Supported,ROBUSTNESS EVIDENCE LABEL,both_medians_improve_at_least_four_months_all_guards_pass
+random_forest,Random Forest,evaluated,seller,DPS-DP0,0.00193643020825,2,True,Not-supported,ROBUSTNESS EVIDENCE LABEL,nonimproving_median_or_at_most_two_both_improved_months
+spline_logistic,Spline Logistic Regression,blocked,both,DPB-DP0,,,,Incomplete,ROBUSTNESS EVIDENCE LABEL,no_applicable_exact_predictive_direct_feature_spline_specification_or_grid_recovered
+spline_logistic,Spline Logistic Regression,blocked,state_od,DPG-DP0,,,,Incomplete,ROBUSTNESS EVIDENCE LABEL,no_applicable_exact_predictive_direct_feature_spline_specification_or_grid_recovered
+spline_logistic,Spline Logistic Regression,blocked,seller,DPS-DP0,,,,Incomplete,ROBUSTNESS EVIDENCE LABEL,no_applicable_exact_predictive_direct_feature_spline_specification_or_grid_recovered
+xgboost,XGBoost,evaluated,both,DPB-DP0,-0.00229967244447,5,False,Mixed,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL,required_guard_unavailable_or_failed
+xgboost,XGBoost,evaluated,state_od,DPG-DP0,-0.00197620878246,5,False,Mixed,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL,required_guard_unavailable_or_failed
+xgboost,XGBoost,evaluated,seller,DPS-DP0,-0.000144657998041,5,True,Supported,PROTECTED PRE-EXISTING DIRECT-EXTENSION LABEL,both_medians_improve_at_least_four_months_all_guards_pass
